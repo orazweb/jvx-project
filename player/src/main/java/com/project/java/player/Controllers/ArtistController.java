@@ -17,7 +17,7 @@ public class ArtistController {
 
     @Autowired
     @Qualifier("artistRepo")
-    private ArtistDao ArtistDao;
+    private ArtistDao ArtistRepo;
 
     @ResponseBody
     @GetMapping("/artistRepo")
