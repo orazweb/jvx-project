@@ -6,6 +6,10 @@ public class Artist {
     private String artist_bio;
     private String artist_picture;
 
+    public Artist() {
+
+    }
+
     public Artist(int id, String artist_name, String artist_bio, String artist_picture) {
         this.id = id;
         this.artist_name = artist_name;

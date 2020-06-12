@@ -17,6 +17,7 @@ public class TrackRepo implements TrackDao {
         trackList.add(new Track(1, "Amerika", 3, 12, 3, 12, 3, 2004));
         trackList.add(new Track(1, "Me Gustas Tu", 6, 13, 7, 13, 4, 2001));
         trackList.add(new Track(1, "Vanessa", 6, 14, 4, 14, 3, 1996));
+        trackList.add(new Track(1, "Every Day I'm Drinking", 6, 15, 2, 15, 2, 2014));
         return trackList;
     }
 

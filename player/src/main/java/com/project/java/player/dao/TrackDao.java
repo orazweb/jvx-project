@@ -9,6 +9,5 @@ import java.util.List;
 public interface TrackDao {
 
     List<Track> findAll();
-
 }
 
