@@ -2,22 +2,22 @@ package com.wildcodeschool.disco_project.entity;
 
 public class Artist {
 
-    private int id;
+    private Long id;
     private String name;
 
     //  constructor
     public Artist() { }
 
     //  constructor
-    public Artist(int id, String name) {
+    public Artist(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 //  getters
-    public int getId() { return id; }
+    public Long getId() { return id; }
     public String getName() { return name; }
 
 //  setters
-    public void setId(int id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
     public void setName(String name) { this.name = name; }
 }
