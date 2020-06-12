@@ -1,6 +1,6 @@
 package com.wildcodeschool.disco_project.repository;
 
-import com.wildcodeschool.disco_project.config.AppConfig;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Repository
+/*@Repository
 public class DiscoDao{
 
     private final Logger L = LoggerFactory.getLogger(getClass());
@@ -16,7 +16,7 @@ public class DiscoDao{
     @Autowired
     private AppConfig config;
 
-}
+}*/
 
 public interface DiscoDao<T> {
 

@@ -1,4 +1,4 @@
-package com.wildcodeschool.disco_project.config;
+/*package com.wildcodeschool.disco_project.config;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -12,4 +12,4 @@ public class AppConfig {
     public SqlConfig mysql;
 
 
-}
+}*/
