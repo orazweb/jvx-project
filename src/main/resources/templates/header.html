@@ -2,21 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" /> <!-- + type="text/css" -->
 </head>
 
 <body>
 
 <header th:fragment="top">
-
-    <nav>
-        <span>JVX PLAYER</span>
-    </nav>
-
+    <a th:href="@{/}">
+        <nav>
+             <h1>JVX PLAYER</h1>
+        </nav>
+    </a>
 </header>
 
 </body>
 </html>
+
 
 <!-- Add in *.html for use header -->
 <!-- <header th:replace="fragments/header.html :: top"></header> -->
