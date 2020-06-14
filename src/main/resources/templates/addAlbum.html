@@ -1,0 +1,29 @@
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+</head>
+<body>
+<h3 th:text="${album.id} ? 'Edit Album' : 'Create Album'">Album</h3>
+<form method="post" th:action="@{/album}" th:object="${album}">
+    <input title="id" th:field="*{id}" type="hidden">
+    <label for="album-title">Title:</label>
+    <input id="album-title" name="title" placeholder="Album_title" required th:field="*{title}" type="text">
+    <br><br>
+    <label for="album-year">Year:</label>
+    <input id="album-year" name="year" placeholder="01/01/2020" required th:field="*{year}" type="date">
+    <br><br>
+    <label for="album-label">Label:</label>
+    <input id="album-label" name="label" placeholder="label" required th:field="*{label_id}" type="number">
+    <br><br>
+    <label for="album-artist">Year:</label>
+    <input id="album-artist" name="artist" placeholder="artist" required th:field="*{artist_id}" type="numer">
+    <br><br>
+    <input type="submit" value="Send">
+
+</form>
+<br>
+<a href="/albums"> << Back </a>
+</body>
+</html> -->
