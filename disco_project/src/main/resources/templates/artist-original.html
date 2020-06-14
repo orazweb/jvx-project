@@ -51,18 +51,30 @@
         }
     </style>
 </head>
-<body th:object="${artist}">
-<h1>D.I.S.C.O</h1>
-<a href="/artists">artists</a>
-<a href="/albums">albums</a>
-<a href="/artist">artist</a>
-<!--<h2 th:text="|Fiche de artiste : | ${*{name}}">fiche de l'artiste</h2>-->
-<!--<h3 th:text="${artist.id} ? 'Fiche de  artiste ">Artiste</h3>-->
+<body>
+
+<h3>Artist : nom_de_l_artiste</h3>
+
 <br><br>
-<div>
-    <span th:text="*{id}">id artist</span>
-    <span th:text="*{name}">artist name</span>
-</div>
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>Album_title</th>
+        <th>Album_year</th>
+        <th>Album_label</th>
+        <th>Artist_name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album : ${albums}">
+        <td th:text="${album.title}">album_title</td>
+        <td th:text="${album.year}">album_year</td>
+        <td th:text="${album.label}">album_label</td>
+        <td th:text="${album.artistName}">album_artist</td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

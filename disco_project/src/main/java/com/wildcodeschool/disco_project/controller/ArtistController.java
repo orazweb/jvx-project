@@ -2,13 +2,11 @@ package com.wildcodeschool.disco_project.controller;
 
 import com.wildcodeschool.disco_project.entity.Artist;
 import com.wildcodeschool.disco_project.repository.ArtistRepository;
-import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+
 
 
 @Controller
@@ -36,6 +34,19 @@ public class ArtistController {
 
         return "artist";
     }
+
+//    @GetMapping("/artist")
+//    public String getArtist(Model model,
+//                            @RequestParam(required = false) Long id) {
+//
+//        Artist artist = new Artist();
+//        if (id != null) {
+//            artist = repository.findById(id);
+//        }
+//        model.addAttribute("artist", artist);
+//
+//        return "artist";
+//    }
 
 }
 
