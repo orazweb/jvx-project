@@ -5,6 +5,10 @@
     <title>Add Artist</title>
 </head>
 <body>
+
+<header th:replace="fragments/header.html :: top">
+</header>
+
 <h3 th:text="${artist.id} ? 'Edit Artist' : 'Create Artist'">Artist</h3>
 <form method="post" th:action="@{/artist}" th:object="${artist}">
     <input name="id" th:field="*{id}" type="hidden">
@@ -21,5 +25,9 @@
 </form>
 <br>
 <a href="/artists"> << Back </a>
+
+<footer th:replace="fragments/footer :: bot">
+</footer>
+
 </body>
 </html> -->
