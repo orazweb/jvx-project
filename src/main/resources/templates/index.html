@@ -1,13 +1,44 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
+<!--    <link  th:href="@{src/main/resources/templates/style.css}" type="text/css" rel="stylesheet"/>-->
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <!-- <link rel="stylesheet" href="style.css" type="text/css" media="screen" /> -->
     <link rel="stylesheet" href="../static/style.css">
     <title>D.I.S.C.O</title>
-
 </head>
+
+    <style>
+        body {
+            background:  #1f1c1c   ;
+            color:white;
+        }
+        h1 {
+            color:  #bfb21b ;
+        }
+        /* unvisited link */
+        a:link {
+            color: red;
+            text-decoration: none;
+        }
+
+        /* visited link */
+        a:visited {
+            color: green;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: hotpink;
+        }
+
+        /* selected link */
+        a:active {
+            color: blue;
+        }
+    </style>
+
 
 <body>
 
@@ -27,4 +58,3 @@
 
 </body>
 </html>
-

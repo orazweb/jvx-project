@@ -5,15 +5,72 @@
     <link rel="stylesheet" href="../static/style.css">
     <title>Artist List</title>
 </head>
+<style>
+    body {
+        background:  #1f1c1c   ;
+        color:white;
+    }
+    h1 {
+        color:  #bfb21b ;
+    }
+    a{
+        color: goldenrod;
+    }
+    /* unvisited link */
+    a:link {
+        text-decoration: none;
+        color: orange;
+    }
 
+    /* visited link */
+    a:visited {
+        color: green;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: hotpink;
+    }
+
+    /* selected link */
+    a:active {
+        color: goldenrod;
+    }
+    table {
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 5px;
+        text-align: left;
+    }
+</style>
 <body>
 
-<header th:replace="fragments/header.html :: top">
-</header>
+<h1>D.I.S.C.O</h1>
 
 <h2>All ARTISTS</h2>
 
 <h3>Select the one you want to listen to : </h3>
+
+<a href="/">home</a>
+<a href="/artists">artists</a>
+<a href="/albums">albums</a>
+<a href="/artist">artist</a>
+<br>
+<h3>Artists</h3>
+<br><br>
 
 <table>
     <thead>
@@ -25,7 +82,7 @@
     <tbody>
     <tr th:each="artist : ${artists}">
         <td th:text="${artist.id}">id</td>
-        <td th:text="${artist.name}">first name</td>
+        <td><a th:href="@{/artist(id=${artist.id})}" th:text="${artist.name}">Artist name</a> </td>
     </tr>
     </tbody>
 </table>
