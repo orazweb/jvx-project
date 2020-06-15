@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="stylesheet" href="../static/style.css">
     <title>Title</title>
 </head>
 <body>
 
 <header th:replace="fragments/header.html :: top">
 </header>
+
+<h2>ALBUM</h2>
+
+<h3>name_of_album</h3>
+
+<!-- list des tracks de l'album -->
+
+<h4> Artist of album : </h4>
+
+<!-- aperçu de l'artiste -->
+
+<a href="/"> << Return to the home page</a>
 
 <footer th:replace="fragments/footer :: bot">
 </footer>
