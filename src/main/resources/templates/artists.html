@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Artist List</title>
 </head>
 
@@ -11,9 +11,10 @@
 <header th:replace="fragments/header.html :: top">
 </header>
 
-<h3>Artists</h3>
+<h2>All ARTISTS</h2>
 
-<br><br>
+<h3>Select the one you want to listen to : </h3>
+
 <table>
     <thead>
     <tr>
@@ -28,8 +29,8 @@
     </tr>
     </tbody>
 </table>
-<br>
-<a href="/">Return to the home page</a>
+
+<a href="/"> << Return to the home page</a>
 
 <footer th:replace="fragments/footer :: bot">
 </footer>
