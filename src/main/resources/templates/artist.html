@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Albums of Artist</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Artist</title>
+</head>
     <style>
         body {
             background:  #1f1c1c   ;
@@ -59,11 +61,13 @@
             color: cornflowerblue;
         }
     </style>
-</head>
-
 
 <body>
-<h1>D.I.S.C.O</h1>
+
+<h2>D.I.S.C.O</h2>
+
+<h2>ARTIST</h2>
+
 <a href="/">home</a>
 <a href="/artists">artists</a>
 <a href="/albums">albums</a>
@@ -76,6 +80,8 @@
     <span> album(s)</span >
 </h2>
 
+<h4>Albums of artist :</h4>
+
 <br>
 <table>
     <thead>
@@ -84,22 +90,24 @@
         <th>title</th>
         <th>year</th>
         <th>label</th>
-<!--        <th>artiste</th>-->
-<!--        <th>id artiste</th>-->
+        <!--        <th>artiste</th>-->
+        <!--        <th>id artiste</th>-->
     </tr>
     </thead>
     <tbody>
     <tr th:each="album : ${albums}">
         <td th:text="${album.id}">id</td>
-<!--        <td th:text="${album.title}">album title</td>-->
+        <!--        <td th:text="${album.title}">album title</td>-->
         <td><a th:href="@{/tracks(id=${album.id})}" th:text="${album.title}">album title</a> </td>
         <td th:text="${album.year}">year</td>
         <td th:text="${album.label}">label</td>
-<!--        <td th:text="${album.artistName}">Artist name </td>-->
-<!--        <td th:text="${album.idArtist}">idArtist</td>-->
+        <!--        <td th:text="${album.artistName}">Artist name </td>-->
+        <!--        <td th:text="${album.idArtist}">idArtist</td>-->
     </tr>
     </tbody>
 </table>
+
+<a href="/"> << Return to the home page</a>
 
 </body>
 </html>
