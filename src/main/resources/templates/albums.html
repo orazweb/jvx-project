@@ -1,35 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="stylesheet" href="style.css">
     <title>Albums List</title>
 </head>
-<style>
-    body {
-        background:#1f1c1c;
-        color:white;
-    }
-    table {
-        border-collapse: collapse;
-    }
 
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-        color: black;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
+
+<header th:replace="fragments/header.html :: top">
+</header>
+
 <h3>Albums</h3>
 
 <br><br>
@@ -55,5 +36,9 @@
 </table>
 <br>
 <a href="/">Return to the home page</a>
+
+<footer th:replace="fragments/footer :: bot">
+</footer>
+
 </body>
 </html>

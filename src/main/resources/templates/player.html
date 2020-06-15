@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <!-- <link rel="stylesheet" href="style.css" type="text/css" media="screen" /> -->
     <link rel="stylesheet" href="style.css">
-    <title>Artist List</title>
+    <title>PLAYER</title>
+
 </head>
 
 <body>
@@ -11,24 +14,13 @@
 <header th:replace="fragments/header.html :: top">
 </header>
 
-<h3>Artists</h3>
+<h2>PLAYER</h2>
 
-<br><br>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Artist name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="artist : ${artists}">
-        <td th:text="${artist.id}">id</td>
-        <td th:text="${artist.name}">first name</td>
-    </tr>
-    </tbody>
-</table>
-<br>
+
+
+
+
+
 <a href="/">Return to the home page</a>
 
 <footer th:replace="fragments/footer :: bot">
@@ -36,3 +28,4 @@
 
 </body>
 </html>
+
