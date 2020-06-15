@@ -2,63 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="../static/style.css">
+    <link href="/style.css" rel="stylesheet" >
     <title>Albums List</title>
 </head>
-<style>
-    body {
-        background:  #1f1c1c   ;
-        color:white;
-    }
-    h1 {
-        color:  #bfb21b ;
-    }
-    /* unvisited link */
-    a:link {
-        text-decoration: none;
-    }
 
-    /* visited link */
-    a:visited {
-        color: green;
-    }
-
-    /* mouse over link */
-    a:hover {
-        color: hotpink;
-    }
-
-    /* selected link */
-    a:active {
-        color: blue;
-    }
-    table {
-        border-collapse: collapse;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-        color: black;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
 <h1>D.I.S.C.O</h1>
-<a href="/">home</a>
-<a href="/artists">artists</a>
-<a href="/albums">albums</a>
-<a href="/artist">artist</a>
-<br>
+
 <h3>Albums</h3>
 <br><br>
 <table>
@@ -84,5 +34,9 @@
     </tbody>
 </table>
 <br>
+
+<footer th:replace="fragments/footer :: bot">
+</footer>
+
 </body>
 </html>

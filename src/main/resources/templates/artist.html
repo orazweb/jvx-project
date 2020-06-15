@@ -2,65 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="../static/style.css">
+    <link href="/style.css" rel="stylesheet" >
     <title>Artist</title>
 </head>
-    <style>
-        body {
-            background:  #1f1c1c   ;
-            color:white;
-        }
-        h1 {
-            color:  #bfb21b ;
-        }
-        /* unvisited link */
-        a:link {
-            text-decoration: none;
-            color: seagreen;
-        }
-
-        /* visited link */
-        a:visited {
-            color: green;
-        }
-
-        /* mouse over link */
-        a:hover {
-            color: hotpink;
-        }
-
-        /* selected link */
-        a:active {
-            color: white;
-        }
-        table {
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-            color: black;
-        }
-
-        th, td {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 5px;
-            text-align: left;
-        }
-
-        .artist_name {
-            color: #bfb21b;
-        }
-
-        .nb_album {
-            color: cornflowerblue;
-        }
-    </style>
 
 <body>
 
@@ -68,10 +12,6 @@
 
 <h2>ARTIST</h2>
 
-<a href="/">home</a>
-<a href="/artists">artists</a>
-<a href="/albums">albums</a>
-<a href="/artist">artist</a>
 <br>
 <!--<h2 th:text="|${albums.get(0).getArtistName()} 's album(s)|"></h2>-->
 <h2>
@@ -108,6 +48,9 @@
 </table>
 
 <a href="/"> << Return to the home page</a>
+
+<footer th:replace="fragments/footer :: bot">
+</footer>
 
 </body>
 </html>
