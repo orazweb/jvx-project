@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     <title>Albums List</title>
 </head>
+<style>
+    body {
+        background:  #1f1c1c   ;
+        color:white;
+    }
+    h1 {
+        color:  #bfb21b ;
+    }
+    /* unvisited link */
+    a:link {
+        text-decoration: none;
+    }
 
+    /* visited link */
+    a:visited {
+        color: green;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: hotpink;
+    }
+
+    /* selected link */
+    a:active {
+        color: blue;
+    }
+    table {
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 5px;
+        text-align: left;
+    }
+</style>
 <body>
-
-<header th:replace="fragments/header.html :: top">
-</header>
-
+<h1>D.I.S.C.O</h1>
+<a href="/">home</a>
+<a href="/artists">artists</a>
+<a href="/albums">albums</a>
+<a href="/artist">artist</a>
+<br>
 <h3>Albums</h3>
-
 <br><br>
 <table>
     <thead>
     <tr>
         <th>Id</th>
-        <th>title</th>
-        <th>year</th>
-        <th>label</th>
+        <th>album title</th>
+        <th>album year</th>
+        <th>album label</th>
         <th>artiste</th>
+        <th>id artiste</th>
     </tr>
     </thead>
     <tbody>
@@ -30,15 +77,11 @@
         <td th:text="${album.title}">album title</td>
         <td th:text="${album.year}">year</td>
         <td th:text="${album.label}">label</td>
-        <td th:text="${album.artistName}">artiste</td>
+        <td><a th:href="@{/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
+        <td th:text="${album.idArtist}">idArtist</td>
     </tr>
     </tbody>
 </table>
 <br>
-<a href="/">Return to the home page</a>
-
-<footer th:replace="fragments/footer :: bot">
-</footer>
-
 </body>
 </html>

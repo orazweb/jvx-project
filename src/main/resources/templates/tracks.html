@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Artist List</title>
+    <title>Album Title - Artist name</title>
 </head>
 <style>
     body {
@@ -12,13 +12,9 @@
     h1 {
         color:  #bfb21b ;
     }
-    a{
-        color: goldenrod;
-    }
     /* unvisited link */
     a:link {
         text-decoration: none;
-        color: orange;
     }
 
     /* visited link */
@@ -33,7 +29,7 @@
 
     /* selected link */
     a:active {
-        color: goldenrod;
+        color: blue;
     }
     table {
         border-collapse: collapse;
@@ -62,24 +58,34 @@
 <a href="/">home</a>
 <a href="/artists">artists</a>
 <a href="/albums">albums</a>
-<a href="/artist">artist</a>
 <br>
-<h3>Artists</h3>
+<h3>Tracks</h3>
 <br><br>
+
 <table>
     <thead>
     <tr>
-        <th>Id</th>
-        <th>Artist name</th>
+        <th>track number</th>
+        <th>track name</th>
+        <th>track duration</th>
+        <th>track genre</th>
+        <th>track year</th>
+        <th>artist name</th>
+        <th>album name</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="artist : ${artists}">
-        <td th:text="${artist.id}">id</td>
-        <td><a th:href="@{/artist(id=${artist.id})}" th:text="${artist.name}">Artist name</a> </td>
+    <tr th:each="track : ${tracks}">
+        <td th:text="${track.number}">track number</td>
+        <td th:text="${track.name}">track name</td>
+        <td th:text="${track.duration}">track duration</td>
+        <td th:text="${track.genre}">track genre</td>
+        <td th:text="${track.year}">track year</td>
+        <td th:text="${track.artistName}">artist name</td>
+        <td th:text="${track.albumName}">album name</td>
     </tr>
     </tbody>
 </table>
-<br>
+
 </body>
 </html>
