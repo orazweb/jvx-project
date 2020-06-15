@@ -1,3 +1,4 @@
+hello: "C'est le mode dev"
 
 spring:
   profiles: default
@@ -6,12 +7,12 @@ server:
   port: 8080
 
 mysql:
-  url:
+  url: "jdbc:mysql://127.0.0.1:3306/kata_sql_restaurant?serverTimezone=GMT"
   username: root
-  password: ax3kuN4guthe
+  password: i-am-root
 
 ---
-
+hello: "c'est la prod"
 
 spring:
   profiles: prod
@@ -23,3 +24,9 @@ mysql:
   url: ${APP_URL}
   username: ${APP_USERNAME}
   password: ${APP_PASSWORD}
+
+
+#---
+#
+#app :
+#  ext(r)ernal api : https://....
