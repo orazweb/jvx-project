@@ -3,11 +3,13 @@ package com.wildcodeschool.disco_project.repository;
 import com.wildcodeschool.disco_project.entity.Album;
 import com.wildcodeschool.disco_project.entity.Track;
 import com.wildcodeschool.disco_project.util.JdbcUtils;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class TrackRepository implements TrackDao<Track> {
 
     private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
