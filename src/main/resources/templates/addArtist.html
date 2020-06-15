@@ -1,7 +1,8 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link th:href="@{../static/style.css}" rel="stylesheet" >
     <title>Add Artist</title>
 </head>
 <body>
@@ -9,7 +10,10 @@
 <header th:replace="fragments/header.html :: top">
 </header>
 
+<h2>Add your artist</h2>
+
 <h3 th:text="${artist.id} ? 'Edit Artist' : 'Create Artist'">Artist</h3>
+
 <form method="post" th:action="@{/artist}" th:object="${artist}">
     <input name="id" th:field="*{id}" type="hidden">
     <label for="artist-name">First name:</label>
@@ -23,11 +27,13 @@
     <br><br>
     <input type="submit" value="Send">
 </form>
-<br>
+
 <a href="/artists"> << Back </a>
+<br>
+<a href="/"> << Return to the home page</a>
 
 <footer th:replace="fragments/footer :: bot">
 </footer>
 
 </body>
-</html> -->
+</html>

@@ -1,25 +1,32 @@
+hello: "C'est le mode dev"
 
 spring:
   profiles: default
 
 server:
-  port: 8080
+  port: 33307
 
 mysql:
-  url:
+  url: "jdbc:mysql//captain.javarover.wilders.dev"
   username: root
   password: ax3kuN4guthe
 
 ---
-
+hello: "c'est la prod"
 
 spring:
   profiles: prod
 
 server:
-  port: 8081
+  port: 8080
 
 mysql:
   url: ${APP_URL}
   username: ${APP_USERNAME}
   password: ${APP_PASSWORD}
+
+
+#---
+#
+#app :
+#  ext(r)ernal api : https://....
