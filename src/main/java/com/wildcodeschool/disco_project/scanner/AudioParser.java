@@ -22,7 +22,7 @@ public class AudioParser {
      * @param args
      */
     public static void main(String[] args) {
-        String fileLocation = "/home/xabi/new-workspace/jvx-project/src/main/resources/tracksLib/07 - Randy.mp3";
+        String fileLocation = "/Volumes/DATA/Wild-Code-School/Formation/Projects/jvx-project/src/main/resources/tracksLib/01 - Safe And Sound.mp3";
 
         try {
 
@@ -48,6 +48,7 @@ public class AudioParser {
             System.out.println("Artists: " + metadata.get("xmpDM:artist"));
             System.out.println("Composer : "+metadata.get("xmpDM:composer"));
             System.out.println("Genre : "+metadata.get("xmpDM:genre"));
+            System.out.println("Album : "+metadata.get("xmpDM:album"));
             System.out.println("Album : "+metadata.get("xmpDM:album"));
 
         } catch (FileNotFoundException e) {
