@@ -26,7 +26,7 @@ import java.sql.*;
                 try {
                     con.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    L.error("failed to close connection", e);
                 }
             }
         }
@@ -36,7 +36,7 @@ import java.sql.*;
                 try {
                     rs.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    L.error("failed to close result set", e);
                 }
             }
         }
@@ -46,7 +46,7 @@ import java.sql.*;
                 try {
                     stmt.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    L.error("failed to close statement", e);
                 }
             }
         }

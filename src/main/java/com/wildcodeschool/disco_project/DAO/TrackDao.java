@@ -20,10 +20,9 @@ import java.util.List;
 @Repository
 public class TrackDao {
 
-//    private static final String MYSQL_URL = "jdbc:mysql://127.0.0.1:3306/kata_sql_restaurant?serverTimezone=GMT";
+//    private static final String MYSQL_URL = "jdbc:mysql//captain.javarover.wilders.dev";
 //    private static final String MYSQL_USERNAME = "root";
-//    private static final String MYSQL_PASSWORD = "i-am-root";
-
+//    private static final String MYSQL_PASSWORD = "ax3kuN4guthe";
 
     private final Logger L = LoggerFactory.getLogger(getClass());
 
@@ -45,7 +44,7 @@ public class TrackDao {
             connection = JdbcUtils.getConnection(config.mysql);
 
             // exec query
-            String sql = "select * from restaurant";
+            String sql = "select * from track";
             statement = connection.prepareStatement(sql);
             rs = statement.executeQuery();
 
@@ -73,5 +72,9 @@ public class TrackDao {
             JdbcUtils.closeStatement(statement);
             JdbcUtils.closeConnection(connection);
         }
+    }
+
+    public Object findAllById(Long id) {
+        return null;
     }
 }
