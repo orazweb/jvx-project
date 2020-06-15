@@ -7,17 +7,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlbumRepository implements DiscoDao<Album>{
+public class AlbumRepository implements AlbumDao<Album>{
     
     private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
     private final static String DB_USER = "root";
     private final static String DB_PASSWORD = "ax3kuN4guthe";
 
-    @Override
-    public Album findById(Long id) { return null; }
+
 
     @Override
-    public List<Album> findAll() {
+    public List<Album> findAllAlbums() {
 
         Connection connection = null;
         PreparedStatement statement = null;
@@ -59,7 +58,7 @@ public class AlbumRepository implements DiscoDao<Album>{
     }
 
     @Override
-    public List<Album> findAllById(Long artist_id) {
+    public List<Album> findAllAlbumsByIdArtist(Long artist_id) {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;

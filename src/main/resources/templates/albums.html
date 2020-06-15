@@ -77,7 +77,7 @@
         <td th:text="${album.title}">album title</td>
         <td th:text="${album.year}">year</td>
         <td th:text="${album.label}">label</td>
-        <td><a th:href="@{/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
+        <td><a th:href="@{/albums/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
         <td th:text="${album.idArtist}">idArtist</td>
     </tr>
     </tbody>

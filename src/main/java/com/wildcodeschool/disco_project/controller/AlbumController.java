@@ -13,16 +13,16 @@ public class AlbumController {
 
     @GetMapping("/albums")
     public String getAll(Model model) {
-        model.addAttribute("albums", repository.findAll());
+        model.addAttribute("albums", repository.findAllAlbums());
         return "albums";
     }
 
-    @GetMapping("/artist")
+    @GetMapping("/albums/artist")
     public String getAlbums(Model model,
                            @RequestParam(required = false) Long id) {
 
         if (id != null)
-            model.addAttribute("albums", repository.findAllById(id));
+            model.addAttribute("albums", repository.findAllAlbumsByIdArtist(id));
         return "artist";
     }
 }

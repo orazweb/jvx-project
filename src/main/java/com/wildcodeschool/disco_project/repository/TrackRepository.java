@@ -8,24 +8,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrackRepository implements DiscoDao<Track> {
+public class TrackRepository implements TrackDao<Track> {
 
     private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
     private final static String DB_USER = "root";
     private final static String DB_PASSWORD = "ax3kuN4guthe";
 
-    @Override
-    public Track findById(Long id) {
-        return null;
-    }
+
 
     @Override
-    public List<Track> findAll() {
-        return null;
-    }
-
-    @Override
-    public List<Track> findAllById(Long album_id) {
+    public List<Track> findAllTracksByIdAlbum(Long album_id) {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
