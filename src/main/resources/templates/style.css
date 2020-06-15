@@ -5,7 +5,7 @@ body {
     color: #ffffff; /* écriture blanche */
 }
 
-ul {
+nav ul li a {
 /* Présence : footer  */
     display: inline-flex; /* en ligne et dans des blocs */
 
@@ -52,24 +52,22 @@ th, td {
     text-align: left;
 }
 
+/*
 @media screen and (max-width: 960px) {
-    /* */
-    .carousel {
-        /* */ display: none;
-    }
-
-    .folow1, .folow2, .folow3 {
-        /* */ display: none;
-    }
-
-    .fellows {
-        /* */ font-size: x-large;
-        padding: 30px;
-    }
-
-    .contact {
-        /* */ text-align: center;
-        padding: 30px 0px 0px 5px;
 
     }
+*/
+
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
+@media screen and (max-width: 1280px) {
+
+
+
+}
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+
+
+
 }
