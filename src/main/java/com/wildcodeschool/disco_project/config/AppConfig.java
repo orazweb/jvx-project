@@ -8,8 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties
-public
-class AppConfig {
+public class AppConfig {
     public SqlConfig mysql;
     private String hello;
 

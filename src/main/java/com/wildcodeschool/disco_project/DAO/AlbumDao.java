@@ -1,4 +1,4 @@
-package com.wildcodeschool.disco_project.repository;
+package com.wildcodeschool.disco_project.DAO;
 
 import com.wildcodeschool.disco_project.entity.Album;
 

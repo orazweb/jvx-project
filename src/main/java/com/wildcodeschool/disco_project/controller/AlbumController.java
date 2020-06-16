@@ -1,6 +1,5 @@
 package com.wildcodeschool.disco_project.controller;
-import com.wildcodeschool.disco_project.repository.AlbumDao;
-import com.wildcodeschool.disco_project.repository.AlbumRepository;
+import com.wildcodeschool.disco_project.DAO.AlbumDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;

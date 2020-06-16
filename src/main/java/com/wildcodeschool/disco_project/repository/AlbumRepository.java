@@ -1,7 +1,12 @@
 package com.wildcodeschool.disco_project.repository;
 
+import com.wildcodeschool.disco_project.DAO.AlbumDao;
+import com.wildcodeschool.disco_project.config.AppConfig;
 import com.wildcodeschool.disco_project.entity.Album;
 import com.wildcodeschool.disco_project.util.JdbcUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -9,24 +14,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class AlbumRepository implements AlbumDao<Album>{
+public class AlbumRepository implements AlbumDao<Album> {
     
-    private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
-    private final static String DB_USER = "root";
-    private final static String DB_PASSWORD = "ax3kuN4guthe";
+//    private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
+//    private final static String DB_USER = "root";
+//    private final static String DB_PASSWORD = "ax3kuN4guthe";
 
+    private final Logger L = LoggerFactory.getLogger(getClass());
 
+    @Autowired
+    private AppConfig config;
 
-    @Override
     public List<Album> findAllAlbums() {
 
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            connection = DriverManager.getConnection(
-                    DB_URL, DB_USER, DB_PASSWORD
-            );
+            connection = JdbcUtils.getConnection(config.mysql);
             statement = connection.prepareStatement(
                     "SELECT album.id, album.title, artist.id, artist.artist_name, album.year, label.name " +
                             "FROM album JOIN artist ON artist.id = album.artist_id " +
@@ -59,15 +64,14 @@ public class AlbumRepository implements AlbumDao<Album>{
         return null;
     }
 
-    @Override
+    @Autowired
     public List<Album> findAllAlbumsByIdArtist(Long artist_id) {
+
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            connection = DriverManager.getConnection(
-                    DB_URL, DB_USER, DB_PASSWORD
-            );
+            connection = JdbcUtils.getConnection(config.mysql);
             statement = connection.prepareStatement(
                     "SELECT " +
                             "album.id, " +
