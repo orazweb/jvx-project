@@ -64,7 +64,6 @@ public class AlbumRepository implements AlbumDao<Album> {
         return null;
     }
 
-    @Autowired
     public List<Album> findAllAlbumsByIdArtist(Long artist_id) {
 
         Connection connection = null;

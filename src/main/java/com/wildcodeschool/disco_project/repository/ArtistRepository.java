@@ -59,7 +59,6 @@ public class ArtistRepository implements ArtistDao<Artist> {
         return null;
     }
 
-    @Autowired
     public List<Artist> findAllArtists() {
 
         Connection connection = null;
