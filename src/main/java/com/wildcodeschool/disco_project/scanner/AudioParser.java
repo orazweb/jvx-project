@@ -68,9 +68,9 @@ public class AudioParser {
 
     public static void main(String[] args) {
         String fileLocation = "/Volumes/DATA/Wild-Code-School/Formation/Projects/jvx-project/src/main/resources/tracksLib/01 - Safe And Sound.mp3";
-        Metadata metadata = getMetadata(fileLocation);
-        System.out.println(metadata.get("xmpDM:album"));
-        System.out.println(metadata.get("xmpDM:artist"));
+        //Metadata metadata = getMetadata(fileLocation);
+        //System.out.println(metadata.get("xmpDM:album"));
+        //System.out.println(metadata.get("xmpDM:artist"));
 
         List<String> tracks = new ArrayList<>();
         // tracks = getResourceFiles("tracksLib");

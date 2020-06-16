@@ -11,7 +11,7 @@ public class DiscoProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DiscoProjectApplication.class, args);
 
-		TrackDisplay.run();
+		//TrackDisplay.run();
 	}
 
 }

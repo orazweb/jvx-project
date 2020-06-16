@@ -12,7 +12,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.io.*;
 import java.net.URL;
 
-public class TrackFolder {
+public class  TrackFolder {
 
     public TrackFolder() {
     }
@@ -59,8 +59,8 @@ public class TrackFolder {
     // Partie 02 : methode(s) pour l'extraction des métadonnées d'un fichier MP3
     // ---------------------------------------
 
+   // public Metadata getMetadata(File fileLocation) {
     public Metadata getMetadata(File fileLocation) {
-
         try {
 
             InputStream input = new FileInputStream(fileLocation);
