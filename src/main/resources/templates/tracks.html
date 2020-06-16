@@ -4,54 +4,11 @@
     <meta charset="UTF-8">
     <title>Album Title - Artist name</title>
 </head>
-<style>
-    body {
-        background:  #1f1c1c   ;
-        color:white;
-    }
-    h1 {
-        color:  #bfb21b ;
-    }
-    /* unvisited link */
-    a:link {
-        text-decoration: none;
-    }
 
-    /* visited link */
-    a:visited {
-        color: green;
-    }
-
-    /* mouse over link */
-    a:hover {
-        color: hotpink;
-    }
-
-    /* selected link */
-    a:active {
-        color: blue;
-    }
-    table {
-        border-collapse: collapse;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-        color: black;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
+
+<header th:replace="fragments/header.html :: top">
+</header>
 
 
 <h1>D.I.S.C.O</h1>
@@ -86,6 +43,9 @@
     </tr>
     </tbody>
 </table>
+
+<footer th:replace="fragments/footer :: bot">
+</footer>
 
 </body>
 </html>
