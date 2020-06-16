@@ -1,5 +1,7 @@
 package com.wildcodeschool.disco_project.entity;
 
+import java.util.List;
+
 public class Album {
 
     private Long id;
@@ -7,6 +9,7 @@ public class Album {
     private Long year;
     private String label;
     private String artistName;
+    private List<Track> tracks;
 
     //  constructor
     public Album() { }

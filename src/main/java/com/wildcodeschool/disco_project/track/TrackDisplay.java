@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.drew.metadata.Metadata;
-//import com.wildcodeschool.disco_project.scanner.AudioParser;
 
 import java.io.File;
 
@@ -17,7 +16,7 @@ public class TrackDisplay {
  */
         //AudioParser audio = new AudioParser();
         TrackFolder trackFolder = new TrackFolder();
-        List<Metadata> metadatas = new ArrayList<>();
+        List<String> metadatas = new ArrayList<>();
 
          //Metadata metadata = new Metadata();
          // List all metadata
@@ -36,6 +35,8 @@ public class TrackDisplay {
         for (File file : files) {
             //System.out.println(file);
             //System.out.println(trackFolder.getMetadata(file));
+            //metadatas.add(trackFolder.getMetadata(file).get("xmpDM:album"));
+
             System.out.println("album title : " + trackFolder.getMetadata(file).get("xmpDM:album"));
             System.out.println("track number : " + trackFolder.getMetadata(file).get("xmpDM:trackNumber"));
             System.out.println("album artist : " + trackFolder.getMetadata(file).get("meta:author"));
@@ -43,8 +44,6 @@ public class TrackDisplay {
             System.out.println("Track title : " + trackFolder.getMetadata(file).get("dc:title"));
             System.out.println("-----------------------------------------------------------------");
 
-
-            //metadata = trackFolder.getMetadata(file);
         }
 
 
