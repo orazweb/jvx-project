@@ -2,26 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="../static/style.css">
+    <link href="/style.css" rel="stylesheet" >
     <title>Albums List</title>
 </head>
 
 <body>
-
-<header th:replace="fragments/header.html :: top">
-</header>
+<h1>D.I.S.C.O</h1>
 
 <h3>Albums</h3>
-
 <br><br>
 <table>
     <thead>
     <tr>
         <th>Id</th>
-        <th>title</th>
-        <th>year</th>
-        <th>label</th>
+        <th>album title</th>
+        <th>album year</th>
+        <th>album label</th>
         <th>artiste</th>
+        <th>id artiste</th>
     </tr>
     </thead>
     <tbody>
@@ -30,12 +28,12 @@
         <td th:text="${album.title}">album title</td>
         <td th:text="${album.year}">year</td>
         <td th:text="${album.label}">label</td>
-        <td th:text="${album.artistName}">artiste</td>
+        <td><a th:href="@{/albums/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
+        <td th:text="${album.idArtist}">idArtist</td>
     </tr>
     </tbody>
 </table>
 <br>
-<a href="/">Return to the home page</a>
 
 <footer th:replace="fragments/footer :: bot">
 </footer>

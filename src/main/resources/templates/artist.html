@@ -2,23 +2,52 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="../static/style.css">
+    <link href="/style.css" rel="stylesheet" >
     <title>Artist</title>
 </head>
+
 <body>
 
-<header th:replace="fragments/header.html :: top">
-</header>
+<h2>D.I.S.C.O</h2>
 
 <h2>ARTIST</h2>
 
-<h3>name_of_artist</h3>
+<br>
+<!--<h2 th:text="|${albums.get(0).getArtistName()} 's album(s)|"></h2>-->
+<h2>
+    <span class="artist_name" th:text="|${albums.get(0).getArtistName()} |"></span >
+    <span class="nb_album" th:text="|${albums.size()} |"></span >
+    <span> album(s)</span >
+</h2>
 
-<!-- page de l'artist : photo principale, bio, photo secondaire -->
+<h4>Albums of artist :</h4>
 
-<h4> Albums of artist : </h4>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>Id album</th>
+        <th>title</th>
+        <th>year</th>
+        <th>label</th>
+        <!--        <th>artiste</th>-->
+        <!--        <th>id artiste</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album : ${albums}">
+        <td th:text="${album.id}">id</td>
 
-<!-- liste des albums de l'artiste -->
+<!--        <td th:text="${album.title}">album title</td> -->
+        <td><a th:href="@{/artist/tracks/album(id=${album.id})}" th:text="${album.title}">album title</a> </td>
+
+        <td th:text="${album.year}">year</td>
+        <td th:text="${album.label}">label</td>
+        <!--        <td th:text="${album.artistName}">Artist name </td>-->
+        <!--        <td th:text="${album.idArtist}">idArtist</td>-->
+    </tr>
+    </tbody>
+</table>
 
 <a href="/"> << Return to the home page</a>
 

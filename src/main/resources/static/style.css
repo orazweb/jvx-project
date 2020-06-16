@@ -4,13 +4,6 @@ body {
     background: #1f1c1c; /* fond noir */
     color: #ffffff; /* écriture blanche */
 }
-
-nav ul li a {
-/* Présence : footer  */
-    display: inline-flex; /* en ligne et dans des blocs */
-
-}
-
 h1 {
     /* Présence : header */
     color: sandybrown; /* couleur de la police */
@@ -27,47 +20,73 @@ h2 {
     color:  #bfb21b ; /* couleur police */
 }
 
+footer {
+    /* Présence : footer  */
+  align-content: center;
+    display: inline-flex; /* en ligne et dans des blocs */
 
+}
+
+/* unvisited link */
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
 table {
-    /* */
-    border-collapse: collapse;
-}
+          border-collapse: collapse;
+     }
 
-th {
-    /* */
-    background-color: #4CAF50;
-    color: white;
-}
+     th {
+                     background-color: #4CAF50;
+                  color: white;
+            }
 
-tr:nth-child(even) {
-    /* */
-    background-color: #f2f2f2;
-    color: black;
-}
+       tr:nth-child(even) {
+                background-color: #f2f2f2;
+                        color: black;
+                   }
 
-th, td {
-    /* */
-    border-bottom: 1px solid #ddd;
-    padding: 10px 5px;
-    text-align: left;
-}
+      th, td {
+                    border-bottom: 1px solid #ddd;
+                      padding: 10px 5px;
+                      text-align: left;
+                    }
+
+      .artist_name {
+      color: #bfb21b;
+             }
+
+     .nb_album {
+                  color: cornflowerblue;
+                    }
+
 
 /*
 @media screen and (max-width: 960px) {
-
     }
 */
 
 /* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
 @media screen and (max-width: 1280px) {
 
-
-
 }
 
 /* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
 @media all and (min-width: 1024px) and (max-width: 1280px) {
-
-
 
 }

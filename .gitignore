@@ -1,4 +1,15 @@
-.DS_STORE
+# intellij
 .idea
 *.iml
+
+# vscode
+.classpath
+.project
+.settings/
+bin/
+
+# maven
 target
+
+# macos
+.DS_STORE
