@@ -1,28 +1,34 @@
 package com.wildcodeschool.disco_project.track;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import com.drew.metadata.Metadata;
+import com.wildcodeschool.disco_project.scanner.AudioParser;
+
+import java.io.File;
+
 public class TrackDisplay {
 
-    public static void main(String[] args) {
+    public static void run() {
 
-        TrackFolder trackFolder = new TrackFolder();
-
-        String folder = "tracksLib";
-
-        List<String> tracks = new ArrayList<>();
-
-        tracks = trackFolder.getResourceFiles(folder);
-
-        for ( String track : tracks) {
-
-            System.out.println(track);
+        // 1. avoir une liste de fichier
+        System.out.println("*** running track scanner");
+        File[] files = TrackFolder.getResourceFolderFiles("tracksLib");
+        for (File file : files) {
+            System.out.println(file);
         }
 
-        //System.out.println(tracks);
+        // 2. avoir une liste de metadata
+        List<Metadata> metadatas = new ArrayList<>();
+        for (File file : files) { 
+            Metadata metadata = AudioParser.getMetadata(file); 
+            metadatas.add(metadata);
+        }
 
-        trackFolder.getMetadata()
+        // 3. avoir une liste de Track
 
+       
     }
 
 }
