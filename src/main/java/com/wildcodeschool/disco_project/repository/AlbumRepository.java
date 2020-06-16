@@ -31,7 +31,7 @@ public class AlbumRepository implements AlbumDao<Album> {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            connection = JdbcUtils.getConnection(config.mysql);
+            connection = JdbcUtils.getConnection(null, config.mysql);
             statement = connection.prepareStatement(
                     "SELECT album.id, album.title, artist.id, artist.artist_name, album.year, label.name " +
                             "FROM album JOIN artist ON artist.id = album.artist_id " +
@@ -70,7 +70,7 @@ public class AlbumRepository implements AlbumDao<Album> {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            connection = JdbcUtils.getConnection(config.mysql);
+            connection = JdbcUtils.getConnection(config.mysql, config.mysql);
             statement = connection.prepareStatement(
                     "SELECT " +
                             "album.id, " +

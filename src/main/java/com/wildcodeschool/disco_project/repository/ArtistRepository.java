@@ -38,7 +38,7 @@ public class ArtistRepository implements ArtistDao<Artist> {
         ResultSet rs = null;
 
         try {
-            connection = JdbcUtils.getConnection(config.mysql);
+            connection = JdbcUtils.getConnection(null, config.mysql);
             statement = connection.prepareStatement(
                     "SELECT artist.artist_name FROM artist where  artist.id = ? ;"
             );
@@ -63,26 +63,26 @@ public class ArtistRepository implements ArtistDao<Artist> {
 
         Connection connection = null;
         PreparedStatement statement = null;
-        ResultSet resultSet = null;
+        ResultSet rs = null;
         try {
-            connection = JdbcUtils.getConnection(config.mysql);
+            connection = JdbcUtils.getConnection(config.mysql, config.mysql);
             statement = connection.prepareStatement(
                     "SELECT * FROM artist;"
             );
-            resultSet = statement.executeQuery();
+            rs = statement.executeQuery();
 
             List<Artist> artists = new ArrayList<>();
 
-            while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
-                String artistName = resultSet.getString("artist_name");
+            while (rs.next()) {
+                Long id = rs.getLong("id");
+                String artistName = rs.getString("artist_name");
                 artists.add(new Artist(id, artistName));
             }
             return artists;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            JdbcUtils.closeResultSet(resultSet);
+            JdbcUtils.closeResultSet(rs);
             JdbcUtils.closeStatement(statement);
             JdbcUtils.closeConnection(connection);
         }
