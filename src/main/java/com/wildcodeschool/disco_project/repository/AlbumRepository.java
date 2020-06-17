@@ -25,6 +25,7 @@ public class AlbumRepository implements AlbumDao<Album> {
     @Autowired
     private AppConfig config;
 
+
     public List<Album> findAllAlbums() {
 
         Connection connection = null;
