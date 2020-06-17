@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40e3d150-73e7-40dc-b57a-8aff2c9fe64f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/entity/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/entity/Album.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/repository/TrackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/repository/TrackRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +71,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DiscoProjectApplication">
+  <component name="RunManager" selected="Application.TrackDisplay">
     <configuration name="AudioParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wildcodeschool.disco_project.scanner.AudioParser" />
       <module name="disco_project" />
