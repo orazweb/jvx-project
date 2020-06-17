@@ -7,9 +7,9 @@ server:
   port: 8080
 
 mysql:
-  url: "jdbc:mysql//captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT"
-  username: root
-  password: ax3kuN4guthe
+  url: "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT"
+  username: "root"
+  password: "ax3kuN4guthe"
 
 ---
 hello: "c'est la prod"
