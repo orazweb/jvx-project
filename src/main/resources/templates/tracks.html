@@ -1,91 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Album Title - Artist name</title>
+    <title>Disco !!!</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<style>
-    body {
-        background:  #1f1c1c   ;
-        color:white;
-    }
-    h1 {
-        color:  #bfb21b ;
-    }
-    /* unvisited link */
-    a:link {
-        text-decoration: none;
-    }
 
-    /* visited link */
-    a:visited {
-        color: green;
-    }
-
-    /* mouse over link */
-    a:hover {
-        color: hotpink;
-    }
-
-    /* selected link */
-    a:active {
-        color: blue;
-    }
-    table {
-        border-collapse: collapse;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-        color: black;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
+<header th:replace="fragments/header.html :: top"></header>
 
 
-<h1>D.I.S.C.O</h1>
-<a href="/">home</a>
-<a href="/artists">artists</a>
-<a href="/albums">albums</a>
-<br>
-<h3>Tracks</h3>
-<br><br>
-
-<table>
-    <thead>
-    <tr>
-        <th>track number</th>
-        <th>track name</th>
-        <th>track duration</th>
-        <th>track genre</th>
-        <th>track year</th>
-        <th>artist name</th>
-        <th>album name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="track : ${tracks}">
-        <td th:text="${track.number}">track number</td>
-        <td th:text="${track.name}">track name</td>
-        <td th:text="${track.duration}">track duration</td>
-        <td th:text="${track.genre}">track genre</td>
-        <td th:text="${track.year}">track year</td>
-        <td th:text="${track.artistName}">artist name</td>
-        <td th:text="${track.albumName}">album name</td>
-    </tr>
-    </tbody>
-</table>
-
+<div class="container">
+    <h3>Tracks</h3>
+    <h2 th:text="|${tracks.get(0).artistName} - ${tracks.get(0).albumName} |"></h2>
+    <table class="table">
+        <thead>
+        <tr>
+<!--            <th>track number</th>-->
+            <th></th>
+            <th>title</th>
+<!--            <th>track duration</th>-->
+            <th>genre</th>
+            <th>year</th>
+<!--            <th>artist name</th>-->
+<!--            <th>album name</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="track : ${tracks}">
+            <td th:text="${track.number}">track number</td>
+            <td th:text="${track.name}">track name</td>
+<!--            <td th:text="${track.duration}">track duration</td>-->
+            <td th:text="${track.genre}">track genre</td>
+            <td th:text="${track.year}">track year</td>
+<!--            <td th:text="${track.artistName}">artist name</td>-->
+<!--            <td th:text="${track.albumName}">album name</td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="fragments/footer.html"></footer>
 </body>
 </html>

@@ -1,45 +1,86 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-<!--    <link  th:href="@{src/main/resources/templates/style.css}" type="text/css" rel="stylesheet"/>-->
-    <title>D.I.S.C.O</title>
-    <style>
-        body {
-            background:  #1f1c1c   ;
-            color:white;
-        }
-        h1 {
-            color:  #bfb21b ;
-        }
-        /* unvisited link */
-        a:link {
-            color: red;
-            text-decoration: none;
-        }
+    <title>Disco !!!</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        /* visited link */
-        a:visited {
-            color: green;
-        }
-
-        /* mouse over link */
-        a:hover {
-            color: hotpink;
-        }
-
-        /* selected link */
-        a:active {
-            color: blue;
-        }
-    </style>
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-<h1>D.I.S.C.O</h1>
-<a href="/artists">artists</a>
-<a href="/albums">albums</a>
+<header th:fragment="top">
+<nav class="navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+<!--                <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
+                Disco
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <img src="bird.jpg" alt="logo" style="width:40px;">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="#">Home</a></li>
+                <li><a href="/albums">Albums</a></li>
+                <li><a href="/artists">Artists</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+<div class="container">
+    <div class="card">
+        <h5 class="card-header">Artist search</h5>
+        <div class="card-body">
+            <h5 class="card-title">display artist list</h5>
+            <p class="card-text">blablbalbalabalbalabla</p>
+            <a href="/artists" class="btn btn-primary">Go to the artists section</a>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-header">Album search</h5>
+        <div class="card-body">
+            <h5 class="card-title">display album </h5>
+            <p class="card-text">blablablablablablabalaba</p>
+            <a href="/albums" class="btn btn-primary">Go to the albums section</a>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+        <li class="list-inline-item">
+<!--            <h5 class="mb-1">Projet 1</h5>-->
+        </li>
+        <li class="list-inline-item">
+            <a href="#!" class="btn btn-danger btn-rounded">Wild Code School</a>
+        </li>
+    </ul>
 
+    <!-- Social buttons -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://www.wildcodeschool.com/fr-FR"> wildcodeschool/valentin/xavier/jerome</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>
