@@ -5,15 +5,81 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+
+
 public class TrackDisplay {
 
+
+
     public static void main(String[] args) {
+
+        TrackSetting trackSetting = new TrackSetting();
+
+        TrackFolder trackFolder = new TrackFolder();
+
+        List<String> metadatas = new ArrayList<>();
+
+        // liste de track
+        List<Track> tracks = new ArrayList<>();
+
+        // recupère la liste des fichiers MP3 dans le dossier "tracksLib"
+        File[] files = TrackFolder.getResourceFolderFiles("tracksLib");
+
+
+
+        for (File file : files) {
+            //Track(String number, String title, String artist, String album, String year, String genre, String duration, String path)
+            tracks.add(
+                    new Track(
+                            trackSetting.formatTrackNumber(trackFolder.getMetadata(file).get("xmpDM:trackNumber")),
+                            trackSetting.getMetadata(file).get("dc:title"),
+                            trackSetting.getMetadata(file).get("xmpDM:artist"),
+                            trackSetting.getMetadata(file).get("xmpDM:album"),
+                            trackSetting.getMetadata(file).get("xmpDM:releaseDate"),
+                            trackSetting.getMetadata(file).get("xmpDM:genre"),
+                            trackSetting.toMinutes(trackFolder.getMetadata(file).get("xmpDM:duration")),
+                            file.toString()
+                    )
+            );
+        }
+
+        for (Track track: tracks) {
+            System.out.println(track.getPath());
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /*
     }
     public static void run() {
  */
         //AudioParser audio = new AudioParser();
-        TrackFolder trackFolder = new TrackFolder();
+        //TrackFolder trackFolder = new TrackFolder();
         //List<String> metadatas = new ArrayList<>();
 
          //Metadata metadata = new Metadata();
@@ -24,45 +90,74 @@ public class TrackDisplay {
 //         //System.out.println(name + ": " + metadata.get(name));
 //         }
 
-        List<String> metadatas = new ArrayList<>();
+//        List<String> metadatas = new ArrayList<>();
 
 
-        // 1. avoir une liste de fichier
-        System.out.println("*** running track scanner");
-        File[] files = TrackFolder.getResourceFolderFiles("tracksLib");
+//        // 1. avoir une liste de fichier
+//        System.out.println("*** running track scanner");
+////        File[] files = TrackFolder.getResourceFolderFiles("tracksLib");
+////        for (File file : files) {
+////            System.out.println(file);
+////        }
+//
+//        System.out.println("**********************************************");
 //        for (File file : files) {
-//            System.out.println(file);
-//        }
-
-        System.out.println("**********************************************");
-        for (File file : files) {
-
-            System.out.println("album title : " + trackFolder.getMetadata(file).get("xmpDM:album"));
-
-//          NUMBER TREATMENT /////////////////////////////////////////////////////////////
-            System.out.println("track number : " + trackFolder.getMetadata(file).get("xmpDM:trackNumber"));
-            /* formatage du numéro de la piste */
-            StringTokenizer multiTokenizer = new StringTokenizer(
-                    trackFolder.getMetadata(file).get("xmpDM:trackNumber"),
-                    "/");
-            String trackNumber = multiTokenizer.nextToken();
-
-            if (trackNumber.charAt(0) != '0'){
-                System.out.println("track number (without 0) : " + trackNumber);
-            }
-            else{
-                System.out.println("track number (with 0) : " + trackNumber.substring(1));
-            }
-
-            System.out.println("album artist : " + trackFolder.getMetadata(file).get("xmpDM:artist"));
-            System.out.println("album year : " + trackFolder.getMetadata(file).get("xmpDM:releaseDate"));
-            System.out.println("Track title : " + trackFolder.getMetadata(file).get("dc:title"));
-            System.out.println("genre : " + trackFolder.getMetadata(file).get("xmpDM:genre"));
-            System.out.println("-----------------------------------------------------------------");
-
-            metadatas.add(trackFolder.getMetadata(file).get("xmpDM:album"));
-            metadatas.add(trackFolder.getMetadata(file).get("xmpDM:artist"));
-        }
+//
+//
+//
+//            /* track number formatage */
+//            System.out.println("track number : " + trackFolder.getMetadata(file).get("xmpDM:trackNumber"));
+////            StringTokenizer multiTokenizer = new StringTokenizer(
+////                    trackFolder.getMetadata(file).get("xmpDM:trackNumber"),
+////                    "/");
+////            String trackNumber = multiTokenizer.nextToken();
+////
+////            if (trackNumber.charAt(0) != '0'){
+////                System.out.println("track number (without 0) : " + trackNumber);
+////            }
+////            else{
+////                System.out.println("track number (with 0) : " + trackNumber.substring(1));
+////            }
+//
+//
+//            /* fin de track number formatage */
+//            System.out.println("Track title : " + trackFolder.getMetadata(file).get("dc:title"));
+//            System.out.println("album title : " + trackFolder.getMetadata(file).get("xmpDM:album"));
+//            System.out.println("album artist : " + trackFolder.getMetadata(file).get("xmpDM:artist"));
+//            System.out.println("album year : " + trackFolder.getMetadata(file).get("xmpDM:releaseDate"));
+//            System.out.println("genre : " + trackFolder.getMetadata(file).get("xmpDM:genre"));
+//            System.out.println("duration : " + trackFolder.getMetadata(file).get("xmpDM:duration"));
+//            System.out.println("duration : " + toMinutes(trackFolder.getMetadata(file).get("xmpDM:duration")));
+//
+//            System.out.println("-----------------------------------------------------------------");
+//
+//            metadatas.add(trackFolder.getMetadata(file).get("xmpDM:album"));
+//            metadatas.add(trackFolder.getMetadata(file).get("xmpDM:artist"));
+//
+//
+//
+//        } /* fin du parcours des  fichiers MP3*/
+//
+//        System.out.println("normalement, ci dessous, " +
+//                "on doit afficher le titre de l'album du premier track sur la liste");
+//        System.out.println(metadatas.get(0));
+//        System.out.println("normalement, ci dessous, " +
+//                "on doit afficher le titre de l'album du troisième track sur la liste soit <<<Encore>>>");
+//        System.out.println(metadatas.get(4));
+/* il reste plus qu'a stocker chaque infos du fichier mp3 dans un objet de type Track
+* Quelles infos récupère t-on depuis le fichier MP3 ?
+*  - track number
+*  - track title
+*  - track artist
+*  - track album
+*  - track year
+*  - track genre
+*  - track duration
+* chaque objet de type Track ainsi alimenté par ces infos se verra donc stocké dans une
+* liste d'objet de type Track :
+* List<Track> tracks = new Array ArrayList<>();
+*
+* */
 
     }
 }
