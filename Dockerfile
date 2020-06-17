@@ -10,5 +10,5 @@ RUN mvn -Dmaven.test.skip  package
 FROM adoptopenjdk/openjdk11:alpine-slim
 WORKDIR /app
 COPY --from=MAVEN_BUILD /build/target/disco_project-0.0.1-SNAPSHOT.jar /app/
-EXPOSE 8080
+EXPOSE 8081
 ENTRYPOINT ["java", "-jar","-Dspring.profiles.active=prod", "disco_project-0.0.1-SNAPSHOT.jar"]
