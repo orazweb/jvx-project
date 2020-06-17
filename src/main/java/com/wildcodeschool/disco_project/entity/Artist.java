@@ -13,13 +13,7 @@ public class Artist {
     private List<Album> albums ;
 
     //  constructor
-    public Artist() { }
-
-    //  constructor
-    public Artist(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    public Artist(Long id, String artistName) { }
 
     public Artist(Long id, String name,
                   String labelName, String albumTitle,

@@ -38,7 +38,7 @@ public class ArtistRepository implements ArtistDao<Artist> {
         ResultSet rs = null;
 
         try {
-            connection = JdbcUtils.getConnection(null, config.mysql);
+            connection = JdbcUtils.getConnection(config.mysql);
             statement = connection.prepareStatement(
                     "SELECT artist.artist_name FROM artist where  artist.id = ? ;"
             );
@@ -65,7 +65,7 @@ public class ArtistRepository implements ArtistDao<Artist> {
         PreparedStatement statement = null;
         ResultSet rs = null;
         try {
-            connection = JdbcUtils.getConnection(config.mysql, config.mysql);
+            connection = JdbcUtils.getConnection(config.mysql);
             statement = connection.prepareStatement(
                     "SELECT * FROM artist;"
             );

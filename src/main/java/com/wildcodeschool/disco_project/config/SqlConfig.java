@@ -6,10 +6,7 @@ public class SqlConfig {
     public String username;
     public String password;
 
-    public SqlConfig(String url, String username, String password) {
-        this.url = url;
-        this.username = username;
-        this.password = password;
+    public SqlConfig() {
     }
 
     public String getUrl() {
