@@ -7,5 +7,5 @@ import java.util.List;
 public interface ArtistDao<T> {
     List<T> findAllArtists();
 
-    T findArtistById(Long id);
+   T findArtistById(Long id);
 }
