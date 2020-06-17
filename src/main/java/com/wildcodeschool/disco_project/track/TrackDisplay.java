@@ -38,20 +38,27 @@ public class TrackDisplay {
         for (File file : files) {
 
             System.out.println("album title : " + trackFolder.getMetadata(file).get("xmpDM:album"));
-            //System.out.println("track number : " + trackFolder.getMetadata(file).get("xmpDM:trackNumber"));
+
+//          NUMBER TREATMENT /////////////////////////////////////////////////////////////
+            System.out.println("track number : " + trackFolder.getMetadata(file).get("xmpDM:trackNumber"));
             /* formatage du numéro de la piste */
             StringTokenizer multiTokenizer = new StringTokenizer(
                     trackFolder.getMetadata(file).get("xmpDM:trackNumber"),
                     "/");
-            System.out.println("track number : " + multiTokenizer.nextToken());
+            String trackNumber = multiTokenizer.nextToken();
+
+            if (trackNumber.charAt(0) != '0'){
+                System.out.println("track number (without 0) : " + trackNumber);
+            }
+            else{
+                System.out.println("track number (with 0) : " + trackNumber.substring(1));
+            }
+
             System.out.println("album artist : " + trackFolder.getMetadata(file).get("xmpDM:artist"));
             System.out.println("album year : " + trackFolder.getMetadata(file).get("xmpDM:releaseDate"));
             System.out.println("Track title : " + trackFolder.getMetadata(file).get("dc:title"));
             System.out.println("genre : " + trackFolder.getMetadata(file).get("xmpDM:genre"));
             System.out.println("-----------------------------------------------------------------");
-
-
-
 
             metadatas.add(trackFolder.getMetadata(file).get("xmpDM:album"));
             metadatas.add(trackFolder.getMetadata(file).get("xmpDM:artist"));
@@ -129,3 +136,24 @@ public class TrackDisplay {
 //String trackNumber = "5";
 //StringTokenizer multiTokenizer = new StringTokenizer(trackNumber, "/");
 //System.out.println(multiTokenizer.nextToken());
+
+
+
+//System.out.println(multiTokenizer.nextToken());
+//System.out.println("toto" + multiTokenizer.nextToken());
+//            if(multiTokenizer.nextToken().charAt(0)!= 0){
+//                System.out.println("track number without 0");
+//                System.out.println("multiTokenizer.nextToken().charAt(0)!= 0 " + multiTokenizer.nextToken().charAt(0));
+//                //System.out.println("track number without 0 : " + multiTokenizer.nextToken());
+//            }
+//            else{
+//                System.out.println("track number with 0");
+//                System.out.println("multiTokenizer.nextToken().charAt(0)!= 0 " + multiTokenizer.nextToken().charAt(0));
+//                System.out.println("track number without 0 : " + multiTokenizer.nextToken().substring(1));
+//            }
+
+
+
+//System.out.println(multiTokenizer.nextToken().charAt(0));
+//System.out.println("track number : " + multiTokenizer.nextToken());
+///////////////////////////////////////////////////////////////////////////////////////////////////////
