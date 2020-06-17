@@ -1,6 +1,7 @@
 package com.wildcodeschool.disco_project.entity;
 
 public class Track {
+
     private long id;
     private String Title;
     private long artist_id;

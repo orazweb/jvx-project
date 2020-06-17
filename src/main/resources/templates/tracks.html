@@ -13,10 +13,10 @@
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
 </head>
+
 <body>
 
-<header th:replace="fragments/header.html :: top">
-</header>
+<header th:replace="fragments/header.html :: top"></header>
 
 <div class="container">
     <!-- Static navbar -->
@@ -43,36 +43,29 @@
     </nav>
 
     <div class="jumbotron">
-        <h3 th:text="' Presentation artist '"></h3>
-        <p>
-            <span class="artist_name" th:text="|${albums.get(0).getArtistName()} |"></span >
-            <span class="nb_album" th:text="|${albums.size()} |"></span >
-            <span> album(s)</span >
-        </p>
-        <p>
-            <br>
+        <h3 th:text="' Tracks '"></h3>
+
         <table>
             <thead>
             <tr>
-                <th>Id album</th>
-                <th>title</th>
-                <th>year</th>
-                <th>label</th>
-                <!--        <th>artiste</th>-->
-                <!--        <th>id artiste</th>-->
+                <th>track number</th>
+                <th>track name</th>
+                <th>track duration</th>
+                <th>track genre</th>
+                <th>track year</th>
+                <th>artist name</th>
+                <th>album name</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="album : ${albums}">
-                <td th:text="${album.id}">id</td>
-
-                <!--        <td th:text="${album.title}">album title</td> -->
-                <td><a th:href="@{/artist/tracks/album(id=${album.id})}" th:text="${album.title}">album title</a> </td>
-
-                <td th:text="${album.year}">year</td>
-                <td th:text="${album.label}">label</td>
-                <!--        <td th:text="${album.artistName}">Artist name </td>-->
-                <!--        <td th:text="${album.idArtist}">idArtist</td>-->
+            <tr th:each="track : ${tracks}">
+                <td th:text="${track.number}">track number</td>
+                <td th:text="${track.name}">track name</td>
+                <td th:text="${track.duration}">track duration</td>
+                <td th:text="${track.genre}">track genre</td>
+                <td th:text="${track.year}">track year</td>
+                <td th:text="${track.artistName}">artist name</td>
+                <td th:text="${track.albumName}">album name</td>
             </tr>
             </tbody>
         </table>
@@ -89,8 +82,7 @@
 <script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
-<footer th:replace="fragments/footer :: bot">
-</footer>
+<footer th:replace="fragments/footer :: bot"></footer>
 
 </body>
 </html>

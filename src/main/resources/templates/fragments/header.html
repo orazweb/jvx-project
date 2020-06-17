@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link href="/static/css/style.css" rel="stylesheet" >
+</head>
+
+<body>
+
+<header th:fragment="top">
+    <a th:align="center", th:href="@{/}">
+        <nav>
+             <h1>JVX PLAYER</h1>
+        </nav>
+    </a>
+</header>
+
+</body>
+</html>
+
+
+<!-- Add in *.html for use header -->
+<!-- <header th:replace="fragments/header.html :: top"></header> -->
