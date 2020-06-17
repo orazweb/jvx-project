@@ -8,7 +8,11 @@ public interface TrackDao<T> {
 
     List<T> findAllTracksByIdAlbum(Long album_id);
 
+    Track save(Long id, int number, String name, String artistName, String genre,
+               String duration, int year, String albumName);
+
     T save(T entity);
+
 
 }
 

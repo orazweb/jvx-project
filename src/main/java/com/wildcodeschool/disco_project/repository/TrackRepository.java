@@ -98,18 +98,19 @@ public class TrackRepository implements TrackDao<Track> {
         return null;
     }
 
+    @Override
+    public Track save(Long id, int number, String name, String artistName, String genre, String duration, int year, String albumName) {
+        return null;
+    }
 
-    @Autowired
-    public Track save (Long id, int number, String name, String artistName, String genre,
+    @Override
+    public Track save(Track entity) {
+        return null;
+    }
+
+
+    /*public Track save (Long id, int number, String name, String artistName, String genre,
                       String duration, int year, String albumName) {
-        this.id = id;
-        this.number = number;
-        this.name = name;
-        this.artistName = artistName;
-        this.genre = genre;
-        this.duration = duration;
-        this.year = year;
-        this.albumName = albumName;
 
 
         L.info("mysql url> " + config.mysql.url);
@@ -150,7 +151,7 @@ public class TrackRepository implements TrackDao<Track> {
                 e.printStackTrace();
             }
             return null;
-        }
+        }*/
     }
 
 

@@ -1,5 +1,6 @@
 package com.wildcodeschool.disco_project.controller;
 
+ import com.wildcodeschool.disco_project.entity.Track;
  import com.wildcodeschool.disco_project.repository.TrackRepository;
  import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,17 @@ public class TrackController {
 
 
     @Autowired
-    private TrackRepository repository = new TrackRepository();
+    private TrackRepository repository = new TrackRepository() {
+        @Override
+        public Track save(Long id, int number, String name, String artistName, String genre, String duration, int year, String albumName) {
+            return null;
+        }
+
+        @Override
+        public Track save(Track entity) {
+            return null;
+        }
+    };
 
     @GetMapping("/tracks")
 //    @ResponseBody
@@ -35,24 +46,6 @@ public class TrackController {
         return "tracks";
     }
 
-    @PostMapping("/track/create")
-    public String postTrack(Model model,
-                            @RequestParam Long id,
-                            @RequestParam int number,
-                            @RequestParam String name,
-                            @RequestParam String artistName,
-                            @RequestParam String duration,
-                            @RequestParam int year,
-                            @RequestParam String albumName
-                            @RequestParam(required = false, defaultValue = " ") String genre,
-                            @RequestParam(required = false, defaultValue = "false") Long duration
-    ) {
-        if(id != null)
-        model.addAttribute("track", TrackRepository.save(id, number,
-                name, artistName, duration, year, albumName, genre));
-
-        return "track_get";
-    }
 }
 
 
