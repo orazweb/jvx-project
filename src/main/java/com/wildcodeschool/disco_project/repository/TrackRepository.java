@@ -7,14 +7,16 @@ import com.wildcodeschool.disco_project.util.JdbcUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 @Repository
@@ -28,6 +30,14 @@ public class TrackRepository implements TrackDao<Track> {
 
     @Autowired
     private AppConfig config;
+    private Long id;
+    private int number;
+    private String name;
+    private String artistName;
+    private String genre;
+    private String duration;
+    private int year;
+    private String albumName;
 
     public List<Track> findAllTracksByIdAlbum(Long album_id) {
 
@@ -42,21 +52,21 @@ public class TrackRepository implements TrackDao<Track> {
 
             statement = connection.prepareStatement(
                     "SELECT track.id, " +
-                                "track.track_number, " +
-                                "track.track_name, " +
-                                "track.track_time, " +
-                                "track.year, " +
-                                "label.name, " +
-                                "style.name, " +
-                                "artist.artist_name, " +
-                                "album.title, " +
-                                "album.id " +
-                           "FROM album JOIN label ON album.label_id = label.id " +
-                           "JOIN artist ON artist.id = album.artist_id " +
-                           "JOIN track ON artist.id = track.artist_id " +
-                           "JOIN style ON style.id = track.style_id " +
-                           "WHERE album.id = ? " +
-                           "ORDER BY track.track_number;"
+                            "track.track_number, " +
+                            "track.track_name, " +
+                            "track.track_time, " +
+                            "track.year, " +
+                            "label.name, " +
+                            "style.name, " +
+                            "artist.artist_name, " +
+                            "album.title, " +
+                            "album.id " +
+                            "FROM album JOIN label ON album.label_id = label.id " +
+                            "JOIN artist ON artist.id = album.artist_id " +
+                            "JOIN track ON artist.id = track.artist_id " +
+                            "JOIN style ON style.id = track.style_id " +
+                            "WHERE album.id = ? " +
+                            "ORDER BY track.track_number;"
 
             );
             statement.setLong(1, album_id);
@@ -70,9 +80,9 @@ public class TrackRepository implements TrackDao<Track> {
                 String name = rs.getString("track.track_name");
                 String artistName = rs.getString("artist.artist_name");
                 String genre = rs.getString("style.name");
-                String duration  = rs.getString("track.track_time");
-                int year  = rs.getInt("track.year");
-                String albumName  = rs.getString("album.title");
+                String duration = rs.getString("track.track_time");
+                int year = rs.getInt("track.year");
+                String albumName = rs.getString("album.title");
 
                 tracks.add(new Track(id, number, name, artistName, genre, duration, year, albumName));
             }
@@ -87,4 +97,62 @@ public class TrackRepository implements TrackDao<Track> {
         }
         return null;
     }
-}
+
+
+    @Autowired
+    public Track save (Long id, int number, String name, String artistName, String genre,
+                      String duration, int year, String albumName) {
+        this.id = id;
+        this.number = number;
+        this.name = name;
+        this.artistName = artistName;
+        this.genre = genre;
+        this.duration = duration;
+        this.year = year;
+        this.albumName = albumName;
+
+
+        L.info("mysql url> " + config.mysql.url);
+
+            Connection connection = null;
+            PreparedStatement statement = null;
+            ResultSet rs = null;
+
+            try {
+                connection = JdbcUtils.getConnection(config.mysql);
+
+                statement = connection.prepareStatement(
+                        "INSERT INTO track (track_number, track_name, track_time," +
+                                " artist_id, style_id, year, album_id, album_label_id) " +
+                                "VALUES (?,?,?,?,?,?,?,?)",
+                        Statement.RETURN_GENERATED_KEYS
+                );
+                statement.setInt(1, number);
+                statement.setString(2, name);
+                statement.setString(3, artistName);
+                statement.setString(4, genre);
+                statement.setString(5, duration);
+                statement.setInt(6, year);
+                statement.setString(7, albumName);
+
+                if (statement.executeUpdate() != 1) {
+                    throw new SQLException("failed to insert data");
+                }
+
+                ResultSet generatedKeys = statement.getGeneratedKeys();
+
+                if (generatedKeys.next()) {
+                    return new Track(id, name, artistName, genre, duration, year, albumName);
+                } else {
+                    throw new SQLException("failed to get inserted id");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+
+
+

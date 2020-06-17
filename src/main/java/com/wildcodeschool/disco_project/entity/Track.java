@@ -11,7 +11,7 @@ public class Track {
     private int year;
     private String albumName;
 
-    public Track() {
+    public Track(Long id, String name, String artistName, String genre, String duration, int year, String albumName) {
     }
 
     public Track(Long id, int number,
@@ -77,6 +77,7 @@ public class Track {
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
     }
+
 
 
 }

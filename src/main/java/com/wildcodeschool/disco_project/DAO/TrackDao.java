@@ -8,6 +8,8 @@ public interface TrackDao<T> {
 
     List<T> findAllTracksByIdAlbum(Long album_id);
 
+    T save(T entity);
+
 }
 
 
