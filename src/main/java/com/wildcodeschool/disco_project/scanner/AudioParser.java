@@ -3,7 +3,9 @@ package com.wildcodeschool.disco_project.scanner;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import com.drew.imaging.mp3.Mp3MetadataReader;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
@@ -13,7 +15,10 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.sound.sampled.AudioFileFormat;
+
 public class AudioParser {
+
 
     public static Metadata getMetadata(File fileLocation) {
 
@@ -65,6 +70,17 @@ public class AudioParser {
     private ClassLoader getContextClassLoader() {
         return Thread.currentThread().getContextClassLoader();
     }
+
+    /*private AudioFileFormat(File filename){
+    File file = new File("filename.mp3");
+    AudioFileFormat baseFileFormat;
+    Map properties = baseFileFormat.properties();
+    Long duration = (Long) properties.get("duration");
+
+        System.out.println();
+    }*/
+
+
 
     public static void main(String[] args) {
         String fileLocation = "/Volumes/DATA/Wild-Code-School/Formation/Projects/jvx-project/src/main/resources/tracksLib/01 - Safe And Sound.mp3";

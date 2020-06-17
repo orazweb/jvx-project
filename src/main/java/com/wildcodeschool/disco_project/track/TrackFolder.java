@@ -9,8 +9,12 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.*;
 import java.net.URL;
+import java.util.Map;
 
 public class  TrackFolder {
 
@@ -85,6 +89,23 @@ public class  TrackFolder {
 
         return null;
     }
+
+   /* public TrackFolder(File file) throws UnsupportedAudioFileException, IOException {
+
+        AudioFileFormat fileFormat = AudioSystem.getAudioFileFormat(file);
+        if (fileFormat instanceof TAudioFileFormat) {
+            Map<?, ?> properties = ((TAudioFileFormat) fileFormat).properties();
+            String key = "duration";
+            Long microseconds = (Long) properties.get(key);
+            int mili = (int) (microseconds / 1000);
+            int sec = (mili / 1000) % 60;
+            int min = (mili / 1000) / 60;
+            System.out.println("time = " + min + ":" + sec);
+        } else {
+            throw new UnsupportedAudioFileException();
+        }*/
+
+
 
     // private List<String> getResourceFiles(String path) throws IOException {
     // List<String> filenames = new ArrayList<>();
