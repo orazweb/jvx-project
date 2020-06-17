@@ -4,7 +4,9 @@ package com.wildcodeschool.disco_project.repository;
 
 import com.wildcodeschool.disco_project.entity.Track;
 import com.wildcodeschool.disco_project.util.JdbcUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -16,7 +18,6 @@ public class TrackRepository implements TrackDao<Track> {
     private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
     private final static String DB_USER = "root";
     private final static String DB_PASSWORD = "ax3kuN4guthe";
-
 
 
     @Override
@@ -67,6 +68,7 @@ public class TrackRepository implements TrackDao<Track> {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "DataBase error", e);
         } finally {
             JdbcUtils.closeResultSet(resultSet);
             JdbcUtils.closeStatement(statement);
@@ -74,3 +76,5 @@ public class TrackRepository implements TrackDao<Track> {
         }
 
     }
+
+}

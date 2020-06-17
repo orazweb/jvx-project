@@ -4,6 +4,7 @@
     <list default="true" id="40e3d150-73e7-40dc-b57a-8aff2c9fe64f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/entity/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/entity/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/entity/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/entity/Track.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/repository/TrackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wildcodeschool/disco_project/repository/TrackRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,9 +181,10 @@
       <screen x="1368" y="0" width="1920" height="1080" />
     </state>
     <state x="1952" y="358" width="814" height="397" key="#com.intellij.fileTypes.FileTypeChooser/1368.0.1920.1080/0.253.1368.768@1368.0.1920.1080" timestamp="1592132193366" />
-    <state x="2172" y="240" width="374" height="633" key="#com.intellij.ide.util.MemberChooser" timestamp="1592232616827">
-      <screen x="1368" y="0" width="1920" height="1080" />
+    <state x="1440" y="261" width="374" height="633" key="#com.intellij.ide.util.MemberChooser" timestamp="1592399517925">
+      <screen x="0" y="27" width="3288" height="1053" />
     </state>
+    <state x="1440" y="261" width="374" height="633" key="#com.intellij.ide.util.MemberChooser/0.27.3288.1053@0.27.3288.1053" timestamp="1592399517925" />
     <state x="2172" y="240" width="374" height="633" key="#com.intellij.ide.util.MemberChooser/1368.0.1920.1080/0.253.1368.768@1368.0.1920.1080" timestamp="1592155159990" />
     <state x="2172" y="240" key="#com.intellij.ide.util.MemberChooser/1368.0.1920.1080/0.27.1368.741@1368.0.1920.1080" timestamp="1592232616827" />
     <state x="2095" y="414" width="555" height="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592147561698">

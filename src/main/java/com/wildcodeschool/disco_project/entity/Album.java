@@ -29,6 +29,9 @@ public class Album {
         this.tracks = tracks;
     }
 
+    public Album(Long id, String title, Long year, String label, String artistName, Long idArtist) {
+    }
+
     // getters
     public List<Track> getTracks() {
         return tracks;
