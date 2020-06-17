@@ -1,7 +1,7 @@
 package com.wildcodeschool.disco_project.repository;
 
 
-import com.wildcodeschool.disco_project.entity.Album;
+//import com.wildcodeschool.disco_project.entity.Album;
 import com.wildcodeschool.disco_project.entity.Track;
 import com.wildcodeschool.disco_project.util.JdbcUtils;
 import org.springframework.stereotype.Repository;
@@ -30,21 +30,21 @@ public class TrackRepository implements TrackDao<Track> {
             );
             statement = connection.prepareStatement(
                     "SELECT track.id, " +
-                                "track.track_number, " +
-                                "track.track_name, " +
-                                "track.track_time, " +
-                                "track.year, " +
-                                "label.name, " +
-                                "style.name, " +
-                                "artist.artist_name, " +
-                                "album.title, " +
-                                "album.id " +
-                           "FROM album JOIN label ON album.label_id = label.id " +
-                           "JOIN artist ON artist.id = album.artist_id " +
-                           "JOIN track ON artist.id = track.artist_id " +
-                           "JOIN style ON style.id = track.style_id " +
-                           "WHERE album.id = ? " +
-                           "ORDER BY track.track_number;"
+                            "track.track_number, " +
+                            "track.track_name, " +
+                            "track.track_time, " +
+                            "track.year, " +
+                            "label.name, " +
+                            "style.name, " +
+                            "artist.artist_name, " +
+                            "album.title, " +
+                            "album.id " +
+                            "FROM album JOIN label ON album.label_id = label.id " +
+                            "JOIN artist ON artist.id = album.artist_id " +
+                            "JOIN track ON artist.id = track.artist_id " +
+                            "JOIN style ON style.id = track.style_id " +
+                            "WHERE album.id = ? " +
+                            "ORDER BY track.track_number;"
             );
             statement.setLong(1, album_id);
             resultSet = statement.executeQuery();
@@ -57,9 +57,9 @@ public class TrackRepository implements TrackDao<Track> {
                 String name = resultSet.getString("track.track_name");
                 String artistName = resultSet.getString("artist.artist_name");
                 String genre = resultSet.getString("style.name");
-                String duration  = resultSet.getString("track.track_time");
-                int year  = resultSet.getInt("track.year");
-                String albumName  = resultSet.getString("album.title");
+                String duration = resultSet.getString("track.track_time");
+                int year = resultSet.getInt("track.year");
+                String albumName = resultSet.getString("album.title");
 
                 tracks.add(new Track(id, number, name, artistName, genre, duration, year, albumName));
             }
@@ -72,8 +72,4 @@ public class TrackRepository implements TrackDao<Track> {
             JdbcUtils.closeStatement(statement);
             JdbcUtils.closeConnection(connection);
         }
-
-
-  
-     
-}
+    }
