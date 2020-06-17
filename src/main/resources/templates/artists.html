@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist List</title>
+</head>
+<style>
+    body {
+        background:#1f1c1c;
+        color:white;
+    }
+    table {
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 5px;
+        text-align: left;
+    }
+</style>
+<body>
+<h3>Artists</h3>
+
+<br><br>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Artist name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="artist : ${artists}">
+        <td th:text="${artist.id}">id</td>
+        <td th:text="${artist.name}">first name</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/">Return to the home page</a>
+</body>
+</html>
