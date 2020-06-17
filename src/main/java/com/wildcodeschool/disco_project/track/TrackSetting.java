@@ -67,7 +67,7 @@ public class TrackSetting {
         return null;
     }
 
-    public  File[] getResourceFolderFiles(String folder) {
+    public static File[] getResourceFolderFiles(String folder) {
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         URL url = loader.getResource(folder);
         String path = url.getPath();
