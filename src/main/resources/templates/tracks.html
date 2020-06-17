@@ -15,35 +15,33 @@
 
 <body>
 <header th:replace="fragments/header.html :: top"></header>
+
+
 <div class="container">
-    <h2>Artist</h2>
-    <h3 th:text="|${albums.get(0).artistName} |"></h3>
+    <h3>Tracks</h3>
+    <h2 th:text="|${tracks.get(0).artistName} - ${tracks.get(0).albumName} |"></h2>
     <table class="table">
         <thead>
         <tr>
-<!--            <th>Id album</th>-->
-            <th>title</th>
-            <th>year</th>
-            <th>label</th>
+<!--            <th>track number</th>-->
             <th></th>
-    <!--        <th>artiste</th>-->
-    <!--        <th>id artiste</th>-->
+            <th>title</th>
+<!--            <th>track duration</th>-->
+            <th>genre</th>
+            <th>year</th>
+<!--            <th>artist name</th>-->
+<!--            <th>album name</th>-->
         </tr>
         </thead>
         <tbody>
-        <tr th:each="album : ${albums}">
-<!--            <td th:text="${album.id}">id</td>-->
-    <!--        <td th:text="${album.title}">album title</td>-->
-            <td><a th:href="@{/artist/tracks/album(id=${album.id})}" th:text="${album.title}">album title</a> </td>
-            <td th:text="${album.year}">year</td>
-            <td th:text="${album.label}">label</td>
-    <!--        <td th:text="${album.artistName}">Artist name </td>-->
-    <!--        <td th:text="${album.idArtist}">idArtist</td>-->
-            <td>
-                <a th:href="@{/artist/tracks/album(id=${album.id})}">
-                    <button type="button" class="btn btn-success">voir</button>
-                </a>
-            </td>
+        <tr th:each="track : ${tracks}">
+            <td th:text="${track.number}">track number</td>
+            <td th:text="${track.name}">track name</td>
+<!--            <td th:text="${track.duration}">track duration</td>-->
+            <td th:text="${track.genre}">track genre</td>
+            <td th:text="${track.year}">track year</td>
+<!--            <td th:text="${track.artistName}">artist name</td>-->
+<!--            <td th:text="${track.albumName}">album name</td>-->
         </tr>
         </tbody>
     </table>
