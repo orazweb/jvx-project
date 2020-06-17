@@ -15,10 +15,6 @@ import java.util.List;
 
 @Repository
 public class AlbumRepository implements AlbumDao<Album> {
-    
-//    private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
-//    private final static String DB_USER = "root";
-//    private final static String DB_PASSWORD = "ax3kuN4guthe";
 
     private final Logger L = LoggerFactory.getLogger(getClass());
 
