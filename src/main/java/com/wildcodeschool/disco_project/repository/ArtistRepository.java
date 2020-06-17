@@ -16,13 +16,6 @@ import java.util.List;
 @Repository
 public class ArtistRepository implements ArtistDao<Artist> {
 
-
-    //mysql -u root -h captain.javarover.wilders.dev -P 33307 -p , pwd: ax3kuN4guthe
-
-//    private final static String DB_URL = "jdbc:mysql://captain.javarover.wilders.dev:33307/mydb?serverTimezone=GMT";
-//    private final static String DB_USER = "root";
-//    private final static String DB_PASSWORD = "ax3kuN4guthe";
-
     private final Logger L = LoggerFactory.getLogger(getClass());
 
     @Autowired
@@ -81,6 +74,7 @@ public class ArtistRepository implements ArtistDao<Artist> {
             return artists;
         } catch (SQLException e) {
             e.printStackTrace();
+
         } finally {
             JdbcUtils.closeResultSet(rs);
             JdbcUtils.closeStatement(statement);

@@ -17,8 +17,4 @@ public class DiscoProjectApplication {
         L.info("starting app..");
         new SpringApplication(DiscoProjectApplication.class).run();
     }
-//    public static void main(String[] args) {
-//        SpringApplication.run(DiscoProjectApplication.class, args);
-//    }
-//}
 }

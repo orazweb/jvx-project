@@ -1,89 +1,53 @@
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Disco !!!</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Albums</title>
-
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-
-<header th:replace="fragments/header.html :: top">
-</header>
-
+<header th:replace="fragments/header.html :: top"></header>
 <div class="container">
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" th:text="${projectName}">Project name</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="/artists">Artists</a></li>
-                    <li><a href="/albums">Albums</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-    </nav>
-
-    <div class="jumbotron">
-        <h3 th:text="' All albums '"></h3>
-        <p>Select the one you want to listen to : </p>
-        <p>
-            <br>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>album title</th>
-                <th>album year</th>
-                <th>album label</th>
-                <th>artiste</th>
-                <th>id artiste</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="album : ${albums}">
-                <td th:text="${album.id}">id</td>
-                <td th:text="${album.title}">album title</td>
-                <td th:text="${album.year}">year</td>
-                <td th:text="${album.label}">label</td>
-                <td><a th:href="@{/albums/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
-                <td th:text="${album.idArtist}">idArtist</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <a class="btn btn-lg btn-primary" href="/" role="button"> << Back</a>
-        </p>
+    <h3>Albums</h3>
+    <h4 th:text="|${albums.size()} album(s) found |"></h4>
+    <table class="table">
+        <thead>
+        <tr>
+    <!--        <th>Id</th>-->
+            <th>title</th>
+            <th>year</th>
+            <th>label</th>
+            <th>artist</th>
+<!--            <th></th>-->
+    <!--        <th>id artiste</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="album : ${albums}">
+    <!--        <td th:text="${album.id}">id</td>-->
+            <td th:text="${album.title}">album title</td>
+            <td th:text="${album.year}">year</td>
+            <td th:text="${album.label}">label</td>
+            <td><a th:href="@{/albums/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
+    <!--        <td th:text="${album.idArtist}">idArtist</td>-->
+<!--            <td>-->
+<!--                <a th:href="@{/albums/artist(id=${album.idArtist})}">-->
+<!--                    <button type="button" class="btn btn-success">voir</button>-->
+<!--                </a>-->
+<!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
     </div>
-</div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-    <footer th:replace="fragments/footer :: bot">
-</footer>
-
+<footer th:replace="fragments/footer.html :: bottom"></footer>
+>>>>>>> origin/jer-dev-ihm
 </body>
 </html>
