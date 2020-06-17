@@ -16,7 +16,9 @@ import java.sql.*;
 
     private final static Logger L = LoggerFactory.getLogger(JdbcUtils.class);
 
-    public static Connection getConnection(SqlConfig config) throws SQLException {
+
+
+    public static Connection getConnection(SqlConfig config, SqlConfig mysql) throws SQLException {
         return DriverManager.getConnection(config.url, config.username, config.password);
 
     }

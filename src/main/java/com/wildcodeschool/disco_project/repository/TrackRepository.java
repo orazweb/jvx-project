@@ -38,7 +38,7 @@ public class TrackRepository implements TrackDao<Track> {
         ResultSet rs = null;
 
         try {
-            connection = JdbcUtils.getConnection(config.mysql);
+            connection = JdbcUtils.getConnection(config.mysql, config.mysql);
 
             statement = connection.prepareStatement(
                     "SELECT track.id, " +
