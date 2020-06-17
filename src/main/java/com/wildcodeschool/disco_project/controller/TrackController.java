@@ -1,4 +1,5 @@
 package com.wildcodeschool.disco_project.controller;
+
 import com.wildcodeschool.disco_project.repository.TrackDao;
 import com.wildcodeschool.disco_project.repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,3 @@ public class TrackController {
         return "tracks";
     }
 }
-
-
