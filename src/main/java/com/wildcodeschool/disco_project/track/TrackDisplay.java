@@ -1,4 +1,5 @@
 package com.wildcodeschool.disco_project.track;
+import com.wildcodeschool.disco_project.scanner.AudioParser;
 import com.wildcodeschool.disco_project.track.TrackDisplay;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,14 +49,15 @@ public class TrackDisplay {
 
 
         // 2. avoir une liste de metadata
-//        List<Metadata> metadatas = new ArrayList<>();
-//        for (File file : files) {
-////            Metadata metadata = AudioParser.getMetadata(file);
-////            metadatas.add(metadata);
-//            //metadatas.add(audio.getMetadata(file));
-//            //Metadata metadata = new Metadata(metadatas.add(audio.getMetadata(file)));
-//            System.out.println(file);
-//        }
+
+       /*List<Metadata> metadatas = new ArrayList<>();
+       for (File file : files) {
+           Metadata metadata = AudioParser.getMetadata(file);
+           metadatas.add(metadata);
+           metadatas.add(audio.getMetadata(file));
+           Metadata metadata = new Metadata(metadatas.add(audio.getMetadata(file)));
+           System.out.println(file);
+       }*/
 
         // 3. avoir une liste de Track
 
