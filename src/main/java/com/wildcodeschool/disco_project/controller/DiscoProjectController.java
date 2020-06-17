@@ -1,4 +1,4 @@
-package com.wildcodeschool.disco_project.repository;
+package com.wildcodeschool.disco_project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
