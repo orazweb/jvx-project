@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<footer th:fragment="bottom">
+    <!-- Footer -->
+<!--    <div class="list-inline text-center">-->
+<!--    <a href="/albums"> <button type="button" class="btn btn-primary btn-lg">Albums</button></a>-->
+<!--    <a href="/artists"> <button type="button" class="btn btn-primary btn-lg">Artists</button></a>-->
+<!--    </div>-->
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+<!--                <h5 class="mb-1">Projet 1</h5>-->
+            </li>
+            <li class="list-inline-item">
+                <a href="#!" class="btn btn-danger btn-rounded">Wild Code School</a>
+            </li>
+        </ul>
+
+        <!-- Social buttons -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://www.wildcodeschool.com/fr-FR"> wildcodeschool/valentin/xavier/jerome</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+</body>
+</html>
+
+
+<!-- Add in *.html for use footer -->
+<!-- <footer th:replace="fragments/footer.html :: footer"></footer> -->

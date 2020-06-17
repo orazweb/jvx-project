@@ -1,53 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Artist List</title>
+    <title>Disco !!!</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<style>
-    body {
-        background:#1f1c1c;
-        color:white;
-    }
-    table {
-        border-collapse: collapse;
-    }
 
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-        color: black;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
-<h3>Artists</h3>
+<header th:replace="fragments/header.html :: top"></header>
 
-<br><br>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Artist name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="artist : ${artists}">
-        <td th:text="${artist.id}">id</td>
-        <td th:text="${artist.name}">first name</td>
-    </tr>
-    </tbody>
-</table>
-<br>
-<a href="/">Return to the home page</a>
+<div class="container">
+    <h3>Artists</h3>
+    <h4 th:text="|${artists.size()} artist(s) found |"></h4>
+
+    <table class="table">
+        <thead>
+        <tr>
+<!--            <th>Id</th>-->
+            <th>Artist name</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="artist : ${artists}">
+<!--            <td th:text="${artist.id}">id</td>-->
+            <td><a th:href="@{/albums/artist(id=${artist.id})}" th:text="${artist.name}">Artist name</a> </td>
+            <td>
+                <a th:href="@{/albums/artist(id=${artist.id})}">
+                    <button type="button" class="btn btn-success">voir</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="fragments/footer.html"></footer>
 </body>
 </html>
