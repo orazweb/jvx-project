@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   /*background-color: black;*/
-  background-image: url("../static/img/2086427.jpg");
+  background-image: url("/img/2086427.jpg");
   /*"../static/css/bootstrap.css"*/
 }
 footer {
@@ -1118,7 +1118,7 @@ body {
   color: #333;
   /*background-color: #1f1c1c;*/
   /*background-color: #ffffff;*/
-  background-image: url("static/img/2086427.jpg");
+  background-image: url("/img/2086427.jpg");
 }
 input,
 button,
