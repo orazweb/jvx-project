@@ -15,12 +15,26 @@ body {
   background-image: url("../static/img/2086427.jpg");
   /*"../static/css/bootstrap.css"*/
 }
+
+
 footer {
   color: white;
   background-color: #1f1c1c;
   padding-top: 30px;
   padding-bottom: 30%;
 }
+.opac{
+  opacity: 50%;
+}
+
+.bg-image{
+  /*background-color: #31708f;*/
+  /*background-color: #1f1c1c;*/
+  background-image: url("/img/2086427.jpg");
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .card {
   /*position: relative;*/
   /*display: -webkit-box;*/
@@ -1118,7 +1132,7 @@ body {
   color: #333;
   /*background-color: #1f1c1c;*/
   /*background-color: #ffffff;*/
-  background-image: url("static/img/2086427.jpg");
+
 }
 input,
 button,
