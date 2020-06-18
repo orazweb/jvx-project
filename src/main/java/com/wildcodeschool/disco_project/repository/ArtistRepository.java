@@ -40,6 +40,7 @@ public class ArtistRepository implements DiscoDao<Artist> {
 
                 String name = resultSet.getString("artist_name");
 
+                //return new Artist(id, name, artistAlbums);
                 return new Artist(id, name);
             }
         } catch (SQLException e) {
@@ -73,6 +74,7 @@ public class ArtistRepository implements DiscoDao<Artist> {
                 Long id = resultSet.getLong("id");
                 String artistName = resultSet.getString("artist_name");
 
+                // artists.add(new Artist(id, artistName, artistAlbums));
                 artists.add(new Artist(id, artistName));
             }
             return artists;

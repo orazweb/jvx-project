@@ -26,7 +26,7 @@ public class ArtistController {
     public String getArtist(Model model,
                             @RequestParam(required = false) Long id) {
 
-        Artist artist = new Artist();
+        Artist artist = new Artist(artistAlbums);
         if (id != null) {
             artist = repository.findById(id);
         }

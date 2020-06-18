@@ -85,13 +85,13 @@ public class AlbumRepository implements DiscoDao<Album>{
 
             while (resultSet.next()) {
 
-                Long id = resultSet.getLong("id");
-                String title = resultSet.getString("title");
-                Long year = resultSet.getLong("year");
+                Long albumId = resultSet.getLong("id");
+                String albumTitle = resultSet.getString("title");
+                String albumYear = resultSet.getString("year");
                 String label = resultSet.getString("label.name");
                 String artistName = resultSet.getString("artist.artist_name");
-                albums.add(new Album(id, title, year, label, artistName));
-//                albums.add(new Album(id, title, year));
+//                albums.add(new Album(id, title, year, label, artistName));
+                albums.add(new Album(albumId, albumTitle ,albumYear, label, artistName));
             }
             return albums;
 

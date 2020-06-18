@@ -45,9 +45,9 @@
     </thead>
     <tbody>
     <tr th:each="album : ${albums}">
-        <td th:text="${album.id}">id</td>
-        <td th:text="${album.title}">album title</td>
-        <td th:text="${album.year}">year</td>
+        <td th:text="${album.albumId}">id</td>
+        <td th:text="${album.albumTitle}">album title</td>
+        <td th:text="${album.albumYear}">year</td>
         <td th:text="${album.label}">label</td>
         <td th:text="${album.artistName}">artiste</td>
     </tr>
