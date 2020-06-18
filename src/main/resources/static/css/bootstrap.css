@@ -9,11 +9,15 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
-  /*background-color: black;*/
-  background-image: url("../static/img/2086427.jpg");
-  /*"../static/css/bootstrap.css"*/
+  background-image: url("/img/2086427.jpg");
+}
+
+.bg-image {
+
+
 }
 
 
@@ -1129,11 +1133,27 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #ffffff;
   /*background-color: #1f1c1c;*/
   /*background-color: #ffffff;*/
 
 }
+
+a {
+}
+a:link {
+  color: #ecc12a;
+}
+a:visited {color: #ecc12a;
+}
+a:focus {color: #ecc12a;
+}
+a:hover {color: #ecc12a;
+  text-decoration: none;
+}
+a:active {color: #ecc12a;
+}
+
 input,
 button,
 select,
