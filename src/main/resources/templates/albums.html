@@ -34,7 +34,7 @@
         <tbody>
         <tr th:each="album : ${albums}">
     <!--        <td th:text="${album.id}">id</td>-->
-            <td th:text="${album.title}">album title</td>
+            <td><a th:href="@{/artist/tracks/album(id=${album.id})}" th:text="${album.title}">album title</a> </td>
             <td th:text="${album.year}">year</td>
             <td th:text="${album.label}">label</td>
             <td><a th:href="@{/albums/artist(id=${album.idArtist})}" th:text="${album.artistName}">Artist name</a> </td>
