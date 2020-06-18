@@ -9,12 +9,17 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
-  /*background-color: black;*/
   background-image: url("/img/2086427.jpg");
-  /*"../static/css/bootstrap.css"*/
 }
+
+.bg-image {
+
+
+}
+
 footer {
   color: white;
   background-color: #1f1c1c;
@@ -1115,11 +1120,27 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #ffffff;
   /*background-color: #1f1c1c;*/
   /*background-color: #ffffff;*/
-  background-image: url("/img/2086427.jpg");
+  /*color: #333;*/
 }
+
+a {
+}
+a:link {
+  color: #ecc12a;
+}
+a:visited {color: #ecc12a;
+}
+a:focus {color: #ecc12a;
+}
+a:hover {color: #ecc12a;
+  text-decoration: none;
+}
+a:active {color: #ecc12a;
+}
+
 input,
 button,
 select,
