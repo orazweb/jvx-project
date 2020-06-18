@@ -18,8 +18,10 @@
 
 
 <div class="container">
-    <h3>Tracks</h3>
-    <h2 th:text="|${tracks.get(0).albumName} by ${tracks.get(0).artistName} |"></h2>
+
+<!--    <h2 th:text="|${tracks.get(0).albumName} by ${tracks.get(0).artistName} |"></h2>-->
+    <a style="font-size:25px; font: bold; text-decoration: none; color: white ; "> <span th:text="|${tracks.get(0).albumName}"></span><br> </a>  by <a style="font-size:18px; font: bold; text-decoration: none;"><span th:text="${tracks.get(0).artistName}|"> </span></a>
+    <h4>Tracks</h4>
     <table class="table">
         <thead>
         <tr>
