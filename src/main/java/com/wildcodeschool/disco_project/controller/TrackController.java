@@ -1,6 +1,6 @@
 package com.wildcodeschool.disco_project.controller;
 
- import com.wildcodeschool.disco_project.DAO.TrackDao;
+ import @   com.wildcodeschool.disco_project.DAO.TrackDao;
  import com.wildcodeschool.disco_project.repository.TrackRepository;
  import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,17 +13,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TrackController {
 
     @Autowired
-    private TrackDao repository;
+    private TrackRepository repository;
+    //private TrackDao repository;
 
     @GetMapping("/artist/tracks/album")
 //    @ResponseBody
-    public String getTracks(Model model, @RequestParam(required = false) Long id) {
+    public String getTracksByIdAlbum(Model model, @RequestParam(required = false) Long idAlbum) {
 
-        if (id != null)
-            model.addAttribute("tracks", repository.findAllTracksByIdAlbum(id));
+        if (idAlbum != null)
+            model.addAttribute("tracks", repository.findAllById(idAlbum));
         return "tracks";
     }
 }
+
+
 
 
 

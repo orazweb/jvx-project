@@ -4,9 +4,9 @@ import com.wildcodeschool.disco_project.entity.Track;
 
 import java.util.List;
 
-public interface TrackDao<T> {
+public interface TrackDao extends GenericDao<Track> {
 
-    List<T> findAllTracksByIdAlbum(Long album_id);
+    List<Track> findAllTracksByIdAlbum(Long albumId);
 
 }
 
